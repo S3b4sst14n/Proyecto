@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+body{
+    background: #91d4f9;
+
+}
+
+.header {
+    background: #d60303a2;
+    width: 10%;
+    position: fixed;
+    z-index: 100;
+}
+
+nav {
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #000000;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background: #91D4F9;
+}
+
+.form-register{
+    width: 400px;
+    background: #ffffff67;
+    padding: 30px;
+    margin:auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: Verdana;
+    color: white;
+    box-shadow: 7px 13px 37px #000000b6;
+}
+
+.form-register h4{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.form-register p{
+    color: black;
+    font-size: 12px;
+}
+.controls{
+    width: 100%;
+    background: white;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #91D4F9;
+    font-family: Verdana;
+    font-size: 18px;
+}
+
+.form-register .botons{
+    width: 100%;
+    background: #13adff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    color: rgb(0, 0, 0);
+    margin: 16px 0;
+    font-size: 16px;
+    font-family: Verdana;
+}
