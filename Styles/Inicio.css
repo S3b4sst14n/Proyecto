@@ -12,7 +12,7 @@ header {
 }
 
 .logo{
-    font-style: italic
+    font-style: italic;
 }
 .banner {
     display: flex;

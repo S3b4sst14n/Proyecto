@@ -5,68 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reserva de Impresora 3D</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/fullcalendar.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    #calendar {
-      max-width: 400px;
-      margin-bottom: 20px;
-    }
-
-    #reservation-form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    input[type="date"],
-    input[type="time"],
-    button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      color: #333;
-    }
-
-    button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <link href="calendario.css" rel="stylesheet">
 </head>
 
 <body>
+  <header class="banner">
+      <link href="#" class="logo">PrintWave3D</lik>
+      <nav>
+          <ul>
+              <li><a href="Inicio.html">Home</a></li>
+              <li><a href="formulario/Formulario.html">¡Reserva aquí!</a></li>
+              <li><a href="#">Info</a></li>
+          </ul>
+      </nav>
+  </header>
+
   <h1>Reserva de Impresora 3D</h1>
 
   <div id="calendar"></div>
@@ -133,48 +86,48 @@
     });
 
     const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+    const bodyParser = require('body-parser');
+    const mongoose = require('mongoose');
 
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+    const app = express();
+    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json());
 
-// Conexión a la base de datos
-mongoose.connect('mongodb://localhost:27017/impresora3d', { useNewUrlParser: true, useUnifiedTopology: true });
+    // Conexión a la base de datos
+    mongoose.connect('mongodb://localhost:27017/impresora3d', { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Definición del modelo de reserva
-const Reserva = mongoose.model('Reserva', {
-  fechaInicio: Date,
-  fechaFin: Date
-});
+    // Definición del modelo de reserva
+    const Reserva = mongoose.model('Reserva', {
+      fechaInicio: Date,
+      fechaFin: Date
+    });
 
-// Ruta para hacer una reserva
-app.post('/reservar', async (req, res) => {
-  const { fechaInicio, fechaFin } = req.body;
+    // Ruta para hacer una reserva
+    app.post('/reservar', async (req, res) => {
+      const { fechaInicio, fechaFin } = req.body;
 
-  // Verificar disponibilidad
-  const reservas = await Reserva.find({
-    $or: [
-      { fechaInicio: { $gte: fechaInicio, $lt: fechaFin } },
-      { fechaFin: { $gt: fechaInicio, $lte: fechaFin } }
-    ]
-  });
+      // Verificar disponibilidad
+      const reservas = await Reserva.find({
+        $or: [
+          { fechaInicio: { $gte: fechaInicio, $lt: fechaFin } },
+          { fechaFin: { $gt: fechaInicio, $lte: fechaFin } }
+        ]
+      });
 
-  if (reservas.length > 0) {
-    return res.status(400).json({ mensaje: 'El horario seleccionado ya está ocupado.' });
-  }
+      if (reservas.length > 0) {
+        return res.status(400).json({ mensaje: 'El horario seleccionado ya está ocupado.' });
+      }
 
-  // Crear reserva
-  const nuevaReserva = new Reserva({ fechaInicio, fechaFin });
-  await nuevaReserva.save();
+      // Crear reserva
+      const nuevaReserva = new Reserva({ fechaInicio, fechaFin });
+      await nuevaReserva.save();
 
-  return res.status(200).json({ mensaje: 'Reserva realizada con éxito.' });
-});
+      return res.status(200).json({ mensaje: 'Reserva realizada con éxito.' });
+    });
 
-app.listen(3000, () => {
-  console.log('Servidor escuchando en el puerto 3000');
-});
+    app.listen(3000, () => {
+      console.log('Servidor escuchando en el puerto 3000');
+    });
 
   </script>
 </body>
