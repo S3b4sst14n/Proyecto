@@ -1,5 +1,7 @@
-* {
-    box-sizing: border-box
+body {
+    margin: 0;
+    background: #91d4f9;
+    font-family: "Lato", sans-serif;
 }
 
 header {

@@ -1,19 +1,21 @@
-* {
-    box-sizing: border-box;
+body {
+    margin: 0;
+    background: #91d4f9;
+    font-family: "Lato", sans-serif;
 }
 
 header {
     background: #ffffffd4;
     width: 100%;
     z-index: 100;
-    margin: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-.logo{
+.logo {
     font-style: italic;
 }
+
 .banner {
     display: flex;
     flex-direction: row;
@@ -49,17 +51,6 @@ nav ul li:hover {
     background: #91D4F9;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #91D4F9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
 
 h1 {
     color: #333;
