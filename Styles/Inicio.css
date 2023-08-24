@@ -54,6 +54,7 @@ body {
     display: flex;
     margin: 0;
     height: 100%;
+    background-color: #91D4F9;
 }
 
 img {
