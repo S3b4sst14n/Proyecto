@@ -1,10 +1,5 @@
 * {
     box-sizing: border-box;
-    /* Agrega esto a tu CSS existente */
-    background-image: url('ruta/a/tu/imagen/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
-    background-position: center center; /* Centra la imagen en el contenedor */
 }
 
 header {

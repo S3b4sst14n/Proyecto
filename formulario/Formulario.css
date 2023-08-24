@@ -1,9 +1,11 @@
+/* Estilos generales */
 body {
     margin: 0;
     background: #91d4f9;
     font-family: "Lato", sans-serif;
 }
 
+/* Encabezado */
 header {
     background: #ffffffd4;
     width: 100%;
@@ -11,6 +13,7 @@ header {
     margin: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -19,13 +22,13 @@ header {
 
 .banner {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
-
+    padding: 20px;
 }
 
+/* Navegación */
 nav ul {
     list-style: none;
     overflow: hidden;
@@ -38,53 +41,54 @@ nav ul li {
     border-radius: 20px;
     font-family: Arial, sans-serif;
     font-size: 16px;
+    margin: 0 10px;
 }
 
 nav ul li a {
     display: block;
     padding: 10px;
-    color: #000000;
+    color: #333;
     text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav ul li:hover {
     background: #91D4F9;
+    border-radius: 20px;
 }
 
-
-
+/* Formulario de registro */
 .form-register {
     width: 400px;
-    background: #ffffff67;
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     margin: auto;
     margin-top: 30px;
-    border-radius: 4px;
-    font-family: Verdana;
-    color: white;
-    box-shadow: 7px 13px 37px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    font-family: "Verdana", sans-serif;
+    color: #333;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-register h4 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 20px;
-    color: black;
+    color: #333;
 }
 
 .form-register p {
-    color: black;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .controls {
     width: 100%;
     background: white;
-    padding: 5px;
+    padding: 10px;
     border-radius: 4px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     border: 1px solid #91D4F9;
-    font-family: Verdana;
-    font-size: 18px;
+    font-family: "Verdana", sans-serif;
+    font-size: 16px;
 }
 
 .form-register .botons {
@@ -93,8 +97,14 @@ nav ul li:hover {
     border: none;
     border-radius: 6px;
     padding: 12px;
-    color: black;
+    color: #fff;
     margin: 16px 0;
-    font-size: 16px;
-    font-family: Verdana;
+    font-size: 18px;
+    font-family: "Verdana", sans-serif;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.form-register .botons:hover {
+    background: #0f8ce3;
 }
