@@ -8,6 +8,7 @@ header {
     background: #ffffffd4;
     width: 100%;
     z-index: 100;
+    margin: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -22,21 +23,21 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
-}
 
-nav {
-    justify-content: center;
 }
 
 nav ul {
     list-style: none;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
     float: left;
-    list-style: none;
     border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
 }
 
 nav ul li a {
@@ -44,13 +45,11 @@ nav ul li a {
     padding: 10px;
     color: #000000;
     text-decoration: none;
-
 }
 
 nav ul li:hover {
     background: #91D4F9;
 }
-
 
 h1 {
     color: #333;
@@ -95,4 +94,29 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    header {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    nav ul {
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        float: none;
+        display: inline-block;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner h1 {
+        margin-top: 20px;
+    }
 }

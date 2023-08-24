@@ -1,5 +1,10 @@
 * {
     box-sizing: border-box;
+    /* Agrega esto a tu CSS existente */
+    background-image: url('ruta/a/tu/imagen/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center center; /* Centra la imagen en el contenedor */
 }
 
 header {
@@ -50,7 +55,6 @@ nav ul li:hover {
 }
 
 body {
-    background: #91D4F9;
     font-family: "Lato", sans-serif;
     display: flex;
     margin: 0;
@@ -77,7 +81,7 @@ img {
     flex-direction: row;
     width: 100%;
     position: relative;
-    top: 140px;
+    top: 100px;
     justify-content: space-between;
 }
 
@@ -100,4 +104,15 @@ img {
     padding: 30px;
     max-width: 600px; /* Establece el límite de ancho para el contenido */
     margin: 0 auto; /* Centra horizontalmente */
+}
+
+.footer {
+    background: #ffffffad;
+    text-align: center;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
