@@ -7,40 +7,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="Formulario.css" rel="stylesheet" type="text/css" />
     <script src="script.js"></script>
+    <link rel="icon" href="../Img/Logo.png">
     <title>Formulario de reserva</title>
 </head>
 
 <body>
+    <body class="fondo">
+    </body>
     <header class="banner">
-        <h1> <em>PrintWave3D<i></h1>
+        <link href="../Inicio.html" class="logo"><img src="../Img/Logo.png" ></lik>
         <nav>
             <ul>
-                <li><a href="../Inicio.html">Inicio</a></li>
+                <li><a href="../Inicio.html">Home</a></li>
                 <li><a href="Formulario.html">¡Reserva aquí!</a></li>
-                <li><a href="#">Info</a></li>
+                <li><a href="../Info/info.html">Info</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="form-register">
-        <h4>A continuacion, llena el formulario para poder hacer la reserva,</h4>
-        <p>Nombres:</p>
-        <input class="controls" type="text" name="nombres" id="nombres">
-        <p>Apellidos:</p>
-        <input class="controls" type="text" name="nombres" id="apellidos">
-        <p>Correo Electronico:</p>
-        <input class="controls" type="text" name="nombres" id="correo">
-        <p>Grado:</p>
-        <input class="controls" type="text" name="nombres" id="grado">
-        <label for="date">Fecha:</label>
-        <input type="date" id="date" name="date" required>
-        <label for="time">Hora:</label>
-        <input type="time" id="time" name="time" max="18:00" required>
-        <input class="botons" type="button" value="Siguiente">
-    </section>
+    <div class="form-register">
+        <h4>Reserva tu fecha</h4>
+        <form action="#" method="post">
+            <div class="controls">
+                <label for="date">Fecha de reserva:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="controls">
+                <label for="name">Nombres:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="controls">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button class="botons" type="submit">Reservar</button>
+        </form>
+    </div>
     <footer class="footer">
         <p>&copy; 2023 PrintWave3D. Proyecto Panfilo.</p>
     </footer>
+
+
+    
+    <script>
+        (function() {
+        emailjs.init("CBkYgFHBBSzXhlGQQ"); // Reemplaza "user_your_user_id" con tu User ID de EmailJS
+        
+        const form = document.querySelector("form");
+        
+        form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const date = document.getElementById("date").value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        
+        const templateParams = {
+        to_email: email,
+        from_name: name,
+        message_html: `Has reservado para la fecha ${date}.`
+        };
+        
+        emailjs.send("service_lam1dth", "template_rj50ih6", templateParams)
+        .then(function(response) {
+        console.log("Correo electrónico enviado con éxito", response);
+        // Aquí puedes mostrar un mensaje de éxito al usuario si lo deseas
+        }, function(error) {
+        console.error("Error al enviar el correo electrónico", error);
+        // Aquí puedes mostrar un mensaje de error al usuario si lo deseas
+        });
+        });
+        })();
+        </script>
 
 </body>
 

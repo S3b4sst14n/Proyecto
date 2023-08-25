@@ -12,9 +12,7 @@ header {
 }
 
 .logo{
-    float: left;
-    width: 25%;
-    height: 25%;
+    font-style: italic;
 }
 .banner {
     display: flex;
@@ -61,6 +59,12 @@ body {
     flex-direction: column;
 }
 
+img {
+    float: left;
+    width: 7%;
+    height: 6%;
+}
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -75,58 +79,3 @@ body {
     }
 }
 
-img {
-    float: left;
-    width: 7%;
-    height: 6%;
-}
-
-
-.Imp {
-    width: 390px;
-    height: 384.643px;
-    border-radius: 30px;
-    background: #ffffffad;
-    margin-left: 2pc;
-}
-
-.KEPS {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    position: relative;
-    top: 100px;
-    justify-content: space-between;
-}
-
-
-
-.fondo {
-    display: flex;
-    flex-direction: row;
-}
-
-.content {
-    display: flex;
-    flex-direction: column; /* Cambia a dirección vertical */
-    font-size: 30px;
-    font-style: italic;
-    border-radius: 30px;
-    background: #ffffffad;
-    align-items: center;
-    gap: 20px;
-    padding: 30px;
-    max-width: 600px; /* Establece el límite de ancho para el contenido */
-    margin: 0 auto; /* Centra horizontalmente */
-}
-
-.footer {
-    background: #ffffffad;
-    text-align: center;
-    padding: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
